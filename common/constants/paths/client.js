@@ -1,3 +1,1 @@
-module.exports = {
-  LOGIN: '/login',
-};
+module.exports.LOGIN = '/login';

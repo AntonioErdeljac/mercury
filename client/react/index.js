@@ -9,6 +9,8 @@ import thunk from 'redux-thunk';
 import { Root } from './components';
 import { middleware, reducers } from './store';
 
+import { paths } from '../../common/constants';
+
 import 'antd/dist/antd.less';
 
 const store = createStore(reducers, applyMiddleware(thunk, middleware()));
@@ -19,7 +21,11 @@ window.onload = () => {
       <Router history={createBrowserHistory()}>
         <Route
           render={() => (
-            <Root />
+            <Root>
+              <Switch>
+                <Route exact path={paths.client.LOGIN} component={() => <p>Login</p>} />
+              </Switch>
+            </Root>
           )}
         />
       </Router>

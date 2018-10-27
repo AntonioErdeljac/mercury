@@ -3,12 +3,14 @@ const compression = require('compression');
 const cookieParser = require('cookie-parser');
 const express = require('express');
 const http = require('http');
+const cors = require('cors');
 
 const config = require('./config');
 const routes = require('./routes');
 
 const app = express();
 
+app.use(cors());
 app.use(bodyParser.json());
 app.use(compression());
 app.use(cookieParser());

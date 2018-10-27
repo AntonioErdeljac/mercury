@@ -1,24 +1,17 @@
+import PropTypes from 'prop-types';
 import React from 'react';
-import { notification } from 'antd';
 import { connect } from 'react-redux';
+import { notification } from 'antd';
 
 import selectors from './selectors';
 
 import actions from '../../actions';
 
-import { POLLING_INTERVAL_MS, TOAST_TIMEOUT_MS, toastTypes } from '../../../../common/constants';
+import { POLLING_INTERVAL_MS, toastTypes } from '../../../../common/constants';
+
+const { _t } = require('../../../../common/i18n');
 
 class Root extends React.Component {
-  constructor() {
-    super();
-
-    this.state = {
-      showConnectionSnackbar: false,
-    };
-
-    this.connectionTimeout = undefined;
-  }
-
   componentDidMount() {
     const { healthCheck } = this.props;
 
@@ -29,22 +22,17 @@ class Root extends React.Component {
     const { isConnected } = this.props;
 
     if (isConnected && !newProps.isConnected) {
-      clearTimeout(this.connectionTimeout);
+      this.showConnectionToast(toastTypes.WARNING);
+    }
 
-      this.showToast();
-    } else if (!isConnected && newProps.isConnected) {
-      this.connectionTimeout = setTimeout(() => {
-        this.setState({ showConnectionSnackbar: false });
-      }, TOAST_TIMEOUT_MS);
+    if (!isConnected && newProps.isConnected) {
+      this.showConnectionToast(toastTypes.INFO);
     }
   }
 
-  showToast = () => {
-    const { isConnected } = this.props;
-
-    notification[isConnected ? 'info' : 'warning']({
-      message: isConnected ? 'Connection restored' : 'Connection lost',
-      description: isConnected ? 'Connection has been restored.' : 'Connection has been lost, please wait.',
+  showConnectionToast = (type) => {
+    notification[type === toastTypes.INFO ? 'info' : 'warning']({
+      message: type === toastTypes.INFO ? _t('toasts.connectionRestored') : _t('toasts.connectionLost'),
     });
   }
 
@@ -53,12 +41,17 @@ class Root extends React.Component {
 
     return (
       <React.Fragment>
-        Root
         {children}
       </React.Fragment>
     );
   }
 }
+
+Root.propTypes = {
+  children: PropTypes.element.isRequired,
+  healthCheck: PropTypes.func.isRequired,
+  isConnected: PropTypes.bool.isRequired,
+};
 
 export default connect(
   selectors,
