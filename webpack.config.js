@@ -1,8 +1,20 @@
-const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+const config = require('./server/config');
+
+const isProduction = process.env.NODE_ENV === 'production';
+
 module.exports = {
+  mode: isProduction ? process.env.NODE_ENV : 'development',
   entry: [`${__dirname}/client/react/index.js`],
+  output: {
+    filename: `./js/app${isProduction ? '.min' : ''}.js`,
+    path: `${__dirname}/static`,
+    publicPath: `${config.serverUrl}/`,
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
   module: {
     rules: [
       {
@@ -50,10 +62,6 @@ module.exports = {
     historyApiFallback: true,
   },
   plugins: [
-    new HtmlWebPackPlugin({
-      template: `${__dirname}/client/html/index.html`,
-      filename: './index.html',
-    }),
     new MiniCssExtractPlugin({ filename: './css/style.css' }),
   ],
 };

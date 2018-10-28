@@ -10,10 +10,15 @@ const routes = require('./routes');
 
 const app = express();
 
+app.set('view engine', 'pug');
+app.set('views', './client/pug');
+
 app.use(cors());
 app.use(bodyParser.json());
 app.use(compression());
 app.use(cookieParser());
+
+app.use('/static', express.static('./static'));
 
 app.use('/', routes());
 

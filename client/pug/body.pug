@@ -1,0 +1,15 @@
+body
+    div(id='root')
+      h3.
+        Loading...
+
+    script.
+      var cssLink = document.createElement('link');
+      cssLink.href = '/static/css/style' + (#{isProduction} ? '.min' : '') + '.css?v' + '#{version}';
+      cssLink.type = 'text/css';
+      cssLink.rel = 'stylesheet';
+      document.getElementsByTagName('head')[0].appendChild(cssLink);
+
+      var appJs = document.createElement('script');
+      appJs.src = '/static/js/app' + (#{isProduction} ? '.min' : '') + '.js?v' + '#{version}';
+      document.getElementsByTagName('head')[0].appendChild(appJs);
