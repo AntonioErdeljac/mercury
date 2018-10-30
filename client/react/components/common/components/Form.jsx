@@ -59,9 +59,9 @@ class Form extends React.Component {
   }
 
   handleOnChange = (value, id) => {
-    const { updateField } = this.state;
+    const { updateField } = this.props;
 
-    updateField(value, id, this.formId);
+    updateField(id, value, this.formId);
   }
 
   handleSubmit = (event) => {
