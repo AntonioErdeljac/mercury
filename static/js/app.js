@@ -86,6 +86,18 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./client/react/actions/forms.js":
+/*!***************************************!*\
+  !*** ./client/react/actions/forms.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nvar _require = __webpack_require__(/*! ../../../common/constants */ \"./common/constants/index.js\"),\n    actions = _require.actions;\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  pushValues: function pushValues(field, values, formId) {\n    return {\n      type: actions.FORM_PUSH_VALUES,\n      values: values,\n      field: field,\n      formId: formId\n    };\n  },\n  removeValues: function removeValues(field, index, formId) {\n    return {\n      type: actions.FORM_REMOVE_VALUE,\n      field: field,\n      index: index,\n      formId: formId\n    };\n  },\n  setValues: function setValues(values, formId) {\n    return {\n      type: actions.FORM_UPDATE_VALUES,\n      values: values,\n      formId: formId\n    };\n  },\n  updateField: function updateField(field, value, formId) {\n    return {\n      type: actions.FORM_UPDATE_FIELD_VALUE,\n      value: value,\n      field: field,\n      formId: formId\n    };\n  }\n});\n\n//# sourceURL=webpack:///./client/react/actions/forms.js?");
+
+/***/ }),
+
 /***/ "./client/react/actions/healthCheck.js":
 /*!*********************************************!*\
   !*** ./client/react/actions/healthCheck.js ***!
@@ -106,7 +118,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _com
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _healthCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./healthCheck */ \"./client/react/actions/healthCheck.js\");\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  healthCheck: _healthCheck__WEBPACK_IMPORTED_MODULE_0__[\"default\"]\n});\n\n//# sourceURL=webpack:///./client/react/actions/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _forms__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./forms */ \"./client/react/actions/forms.js\");\n/* harmony import */ var _healthCheck__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./healthCheck */ \"./client/react/actions/healthCheck.js\");\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  forms: _forms__WEBPACK_IMPORTED_MODULE_0__[\"default\"],\n  healthCheck: _healthCheck__WEBPACK_IMPORTED_MODULE_1__[\"default\"]\n});\n\n//# sourceURL=webpack:///./client/react/actions/index.js?");
 
 /***/ }),
 
@@ -182,6 +194,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var axio
 
 /***/ }),
 
+/***/ "./client/react/store/reducers/forms.js":
+/*!**********************************************!*\
+  !*** ./client/react/store/reducers/forms.js ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _common_constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../common/constants */ \"./common/constants/index.js\");\n/* harmony import */ var _common_constants__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_common_constants__WEBPACK_IMPORTED_MODULE_1__);\nvar _actionMap;\n\nfunction _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }\n\nfunction _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\n\n\nvar initialState = {\n  data: {}\n};\nvar actionMap = (_actionMap = {}, _defineProperty(_actionMap, _common_constants__WEBPACK_IMPORTED_MODULE_1__[\"actions\"].FORM_UPDATE_VALUES, function (state, _ref) {\n  var values = _ref.values,\n      formId = _ref.formId;\n  return _objectSpread({}, Object(lodash__WEBPACK_IMPORTED_MODULE_0__[\"set\"])(Object(lodash__WEBPACK_IMPORTED_MODULE_0__[\"cloneDeep\"])(state), \"data.\".concat(formId, \".values\"), values));\n}), _defineProperty(_actionMap, _common_constants__WEBPACK_IMPORTED_MODULE_1__[\"actions\"].FORM_UPDATE_FIELD_VALUE, function (state, _ref2) {\n  var value = _ref2.value,\n      field = _ref2.field,\n      formId = _ref2.formId;\n  return _objectSpread({}, Object(lodash__WEBPACK_IMPORTED_MODULE_0__[\"set\"])(Object(lodash__WEBPACK_IMPORTED_MODULE_0__[\"cloneDeep\"])(state), \"data.\".concat(formId, \".values.\").concat(field), value));\n}), _actionMap);\n/* harmony default export */ __webpack_exports__[\"default\"] = (function () {\n  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;\n  var action = arguments.length > 1 ? arguments[1] : undefined;\n\n  if (actionMap[action.type]) {\n    return actionMap[action.type](state);\n  }\n\n  return state;\n});\n\n//# sourceURL=webpack:///./client/react/store/reducers/forms.js?");
+
+/***/ }),
+
 /***/ "./client/react/store/reducers/healthCheck.js":
 /*!****************************************************!*\
   !*** ./client/react/store/reducers/healthCheck.js ***!
@@ -202,7 +226,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _com
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ \"./node_modules/redux/es/redux.js\");\n/* harmony import */ var _healthCheck__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./healthCheck */ \"./client/react/store/reducers/healthCheck.js\");\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Object(redux__WEBPACK_IMPORTED_MODULE_0__[\"combineReducers\"])({\n  healthCheck: _healthCheck__WEBPACK_IMPORTED_MODULE_1__[\"default\"]\n}));\n\n//# sourceURL=webpack:///./client/react/store/reducers/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ \"./node_modules/redux/es/redux.js\");\n/* harmony import */ var _forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./forms */ \"./client/react/store/reducers/forms.js\");\n/* harmony import */ var _healthCheck__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./healthCheck */ \"./client/react/store/reducers/healthCheck.js\");\n\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Object(redux__WEBPACK_IMPORTED_MODULE_0__[\"combineReducers\"])({\n  forms: _forms__WEBPACK_IMPORTED_MODULE_1__[\"default\"],\n  healthCheck: _healthCheck__WEBPACK_IMPORTED_MODULE_2__[\"default\"]\n}));\n\n//# sourceURL=webpack:///./client/react/store/reducers/index.js?");
 
 /***/ }),
 
@@ -213,7 +237,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var redu
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("var keyMirror = __webpack_require__(/*! keymirror */ \"./node_modules/keymirror/index.js\");\n\nmodule.exports = keyMirror({\n  API_CALL: null,\n  HEALTH_CHECK_FAILURE: null,\n  HEALTH_CHECK_REQUEST: null,\n  HEALTH_CHECK_SUCCESS: null\n});\n\n//# sourceURL=webpack:///./common/constants/actions.js?");
+eval("var keyMirror = __webpack_require__(/*! keymirror */ \"./node_modules/keymirror/index.js\");\n\nmodule.exports = keyMirror({\n  API_CALL: null,\n  FORM_PUSH_VALUES: null,\n  FORM_REMOVE_VALUE: null,\n  FORM_UPDATE_FIELD_VALUE: null,\n  FORM_UPDATE_VALUES: null,\n  HEALTH_CHECK_FAILURE: null,\n  HEALTH_CHECK_REQUEST: null,\n  HEALTH_CHECK_SUCCESS: null\n});\n\n//# sourceURL=webpack:///./common/constants/actions.js?");
 
 /***/ }),
 
