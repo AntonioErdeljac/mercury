@@ -1,0 +1,38 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+.mc-login {
+  background-color: #9b59b6;
+  height: 100%; }
+  .mc-login .mc-login-left {
+    height: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; }
+  .mc-login .mc-login-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    flex-direction: column; }
+    .mc-login .mc-login-right h1 {
+      font-size: 50px;
+      color: white; }
+    .mc-login .mc-login-right p {
+      font-size: 30px;
+      color: white; }
+
+.mc-h-100 {
+  height: 100% !important; }
+
+.mc-my-5 {
+  margin-top: 5px;
+  margin-bottom: 5px; }
+
+.mc-my-10 {
+  margin-top: 10px;
+  margin-bottom: 10px; }
+
+* {
+  font-family: 'Open Sans' !important; }
+

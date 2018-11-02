@@ -12,6 +12,7 @@ import { middleware, reducers } from './store';
 import { paths } from '../../common/constants';
 
 import 'antd/dist/antd.less';
+import '../scss/index.scss';
 
 const store = createStore(reducers, applyMiddleware(thunk, middleware()));
 
