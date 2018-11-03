@@ -11,7 +11,7 @@ module.exports = async (req, res) => {
     const { email, password } = req.body;
 
     if (!email || !password) {
-      return respond(res, errorMessages.USER_400);
+      return respond.error(res, errorMessages.USER_400);
     }
 
     const foundUser = await db.Users.getByEmail(email)

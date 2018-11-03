@@ -1,9 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Input } from 'antd';
 
 const InputField = ({ label, id, onChange, onBlur, value, disabled }) => (
-  <Input
+  <input
     placeholder={label}
     id={id}
     onChange={({ target }) => onChange(target.value, id)}

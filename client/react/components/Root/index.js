@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
-import { notification } from 'antd';
 
 import selectors from './selectors';
 
@@ -31,9 +30,7 @@ class Root extends React.Component {
   }
 
   showConnectionToast = (type) => {
-    notification[type === toastTypes.INFO ? 'info' : 'warning']({
-      message: type === toastTypes.INFO ? _t('toasts.connectionRestored') : _t('toasts.connectionLost'),
-    });
+    // todo
   }
 
   render() {
@@ -41,6 +38,7 @@ class Root extends React.Component {
 
     return (
       <React.Fragment>
+        <SemanticToastContainer position="top-right" />
         {children}
       </React.Fragment>
     );

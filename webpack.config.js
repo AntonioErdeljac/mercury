@@ -38,28 +38,7 @@ module.exports = {
           loader: 'html-loader',
         },
       },
-      {
-        test: /\.less$/,
-        use: [{
-          loader: 'style-loader',
-        }, {
-          loader: 'css-loader',
-        }, {
-          loader: 'less-loader',
-          options: {
-            modifyVars: {
-              'primary-color': '#9b59b6',
-              'link-color': '#9b59b6',
-              'border-radius-base': '2px',
-            },
-            javascriptEnabled: true,
-          },
-        }],
-      },
     ],
-  },
-  devServer: {
-    historyApiFallback: true,
   },
   plugins: [
     new MiniCssExtractPlugin({ filename: './css/style.css' }),
