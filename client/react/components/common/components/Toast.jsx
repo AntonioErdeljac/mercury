@@ -25,7 +25,7 @@ class Toast extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    const { show, hideTimeout } = this.props;
+    const { show, hideTimeout, onTimeout } = this.props;
 
     if (newProps.show && !show) {
       this.setState({
@@ -35,13 +35,15 @@ class Toast extends React.Component {
       this.toastTimeout = setTimeout(() => {
         this.setState({
           showToast: false,
+        }, () => {
+          onTimeout();
         });
       }, hideTimeout);
     }
   }
 
   render() {
-    const { message, info, warning, icon } = this.props;
+    const { message, info, negative, icon, warning } = this.props;
     const { showToast } = this.state;
 
     return (
@@ -50,6 +52,7 @@ class Toast extends React.Component {
           icon={icon}
           info={info}
           warning={warning}
+          negative={negative}
           content={message}
         />
       </div>
@@ -59,18 +62,22 @@ class Toast extends React.Component {
 
 Toast.defaultProps = {
   hideTimeout: 3000,
-  info: false,
-  warning: false,
   icon: undefined,
+  info: false,
+  negative: false,
+  onTimeout: () => {},
+  warning: false,
 };
 
 Toast.propTypes = {
-  icon: PropTypes.string,
-  show: PropTypes.bool.isRequired,
   hideTimeout: PropTypes.number,
+  icon: PropTypes.string,
   info: PropTypes.bool,
-  warning: PropTypes.bool,
   message: PropTypes.string.isRequired,
+  negative: PropTypes.bool,
+  onTimeout: PropTypes.func,
+  show: PropTypes.bool.isRequired,
+  warning: PropTypes.bool,
 };
 
 export default Toast;

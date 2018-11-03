@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Button, Form as SemForm, Checkbox } from 'semantic-ui-react';
 
+import validations from './validations';
 import selectors from './selectors';
 
 import actions from '../../../actions';
@@ -19,7 +20,7 @@ class Login extends Form {
       validating: {},
     };
 
-    this.validations = {};
+    this.validations = validations;
     this.formId = forms.LOGIN;
   }
 
@@ -61,7 +62,7 @@ class Login extends Form {
     return (
       <div className="mc-login mc-h-100">
         <div className="mc-login-left mc-h-100" span={8}>
-          <SemForm onSubmit={this.handleLogin}>
+          <SemForm autocomplete="off" onSubmit={this.handleLogin}>
             <SemForm.Field>
               <Input {...this.getFieldProps('email')} label="Email" />
             </SemForm.Field>

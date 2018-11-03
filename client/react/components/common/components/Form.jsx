@@ -91,7 +91,7 @@ class Form extends React.Component {
         this.setState({ errors });
 
         if (hasError) {
-          setTimeout(() => document.querySelector('.sn-error').focus(), 100);
+          setTimeout(() => document.querySelector('.mc-error').focus(), 100);
         }
 
         return !hasError;

@@ -43,6 +43,11 @@
   margin-top: 10px;
   margin-bottom: 10px; }
 
+.mc-error input {
+  border-color: #e74c3c !important; }
+  .mc-error input::placeholder {
+    color: #e74c3c !important; }
+
 p h1 a h2 h3 h4 h5 h6 b {
   font-family: 'Open Sans' !important; }
 

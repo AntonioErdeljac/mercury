@@ -1,4 +1,4 @@
 module.exports = {
-  USER_400: 'Invalid user data',
-  USER_404: 'User does not exist',
+  USER_400: 'toasts.user400',
+  USER_404: 'toasts.user404',
 };

@@ -20,7 +20,7 @@ class Root extends React.Component {
   }
 
   render() {
-    const { children, isConnected } = this.props;
+    const { children, isConnected, toasts, clearToast, hasToast } = this.props;
 
     return (
       <React.Fragment>
@@ -38,6 +38,15 @@ class Root extends React.Component {
           message={_t('toasts.connectionLost')}
           warning
         />
+        <Toast
+          icon={toasts.type === 'success' ? 'check circle outline' : 'times circle outline'}
+          show={hasToast}
+          onTimeout={clearToast}
+          hideTimeout={TOAST_TIMEOUT_MS}
+          message={_t(toasts.message)}
+          success={toasts.type === 'success'}
+          negative={toasts.type === 'negative'}
+        />
         {children}
       </React.Fragment>
     );
@@ -45,6 +54,12 @@ class Root extends React.Component {
 }
 
 Root.propTypes = {
+  clearToast: PropTypes.func.isRequired,
+  hasToast: PropTypes.bool.isRequired,
+  toasts: PropTypes.shape({
+    type: PropTypes.string,
+    message: PropTypes.string,
+  }).isRequired,
   children: PropTypes.element.isRequired,
   healthCheck: PropTypes.func.isRequired,
   isConnected: PropTypes.bool.isRequired,
@@ -54,5 +69,6 @@ export default connect(
   selectors,
   {
     ...actions.healthCheck,
+    ...actions.toasts,
   },
 )(Root);
