@@ -4,9 +4,11 @@ import { connect } from 'react-redux';
 
 import selectors from './selectors';
 
+import { Toast } from '../common/components';
+
 import actions from '../../actions';
 
-import { POLLING_INTERVAL_MS, toastTypes } from '../../../../common/constants';
+import { POLLING_INTERVAL_MS, TOAST_TIMEOUT_MS } from '../../../../common/constants';
 
 const { _t } = require('../../../../common/i18n');
 
@@ -17,28 +19,25 @@ class Root extends React.Component {
     setInterval(healthCheck, POLLING_INTERVAL_MS);
   }
 
-  componentWillReceiveProps(newProps) {
-    const { isConnected } = this.props;
-
-    if (isConnected && !newProps.isConnected) {
-      this.showConnectionToast(toastTypes.WARNING);
-    }
-
-    if (!isConnected && newProps.isConnected) {
-      this.showConnectionToast(toastTypes.INFO);
-    }
-  }
-
-  showConnectionToast = (type) => {
-    // todo
-  }
-
   render() {
-    const { children } = this.props;
+    const { children, isConnected } = this.props;
 
     return (
       <React.Fragment>
-        <SemanticToastContainer position="top-right" />
+        <Toast
+          icon="globe"
+          show={isConnected}
+          hideTimeout={TOAST_TIMEOUT_MS}
+          message={_t('toasts.connectionRestored')}
+          info
+        />
+        <Toast
+          icon="globe"
+          show={!isConnected}
+          hideTimeout={TOAST_TIMEOUT_MS}
+          message={_t('toasts.connectionLost')}
+          warning
+        />
         {children}
       </React.Fragment>
     );
