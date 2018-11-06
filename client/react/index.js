@@ -24,6 +24,7 @@ window.onload = () => {
             <Root>
               <Switch>
                 <Route exact path={paths.client.LOGIN} component={Authentication.Login} />
+                <Route exact path={paths.client.REGISTER} component={Authentication.Register} />
               </Switch>
             </Root>
           )}
