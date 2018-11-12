@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 import { Button, Form as SemForm } from 'semantic-ui-react';
@@ -7,7 +8,7 @@ import selectors from './selectors';
 
 import actions from '../../../actions';
 
-import { Form, Input, SubmitButton } from '../../common/components';
+import { Form, Input } from '../../common/components';
 
 import { forms, paths } from '../../../../../common/constants';
 
@@ -36,7 +37,7 @@ class Register extends Form {
 
           register(values)
             .then(() => {
-              window.location = paths.client.BASE;
+              window.location = paths.client.HOME;
             });
         }
 
@@ -57,8 +58,6 @@ class Register extends Form {
   }
 
   render() {
-    const { isSubmitting } = this.props;
-
     return (
       <div className="mc-login mc-h-100">
         <div className="mc-login-left mc-h-100" span={8}>
@@ -80,12 +79,16 @@ class Register extends Form {
         </div>
         <div className="mc-login-right mc-h-100" span={16}>
           <h1>Mercury</h1>
-          <p>World's best event platform</p>
+          <p>Worlds best event platform</p>
         </div>
       </div>
     );
   }
 }
+
+Register.propTypes = {
+  isSubmitting: PropTypes.bool.isRequired,
+};
 
 export default connect(
   selectors,

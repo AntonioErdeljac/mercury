@@ -6,7 +6,7 @@ import { createBrowserHistory } from 'history';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
-import { Authentication, Root } from './components';
+import { Authentication, Root, Home } from './components';
 import { middleware, reducers } from './store';
 
 import { paths } from '../../common/constants';
@@ -25,6 +25,7 @@ window.onload = () => {
               <Switch>
                 <Route exact path={paths.client.LOGIN} component={Authentication.Login} />
                 <Route exact path={paths.client.REGISTER} component={Authentication.Register} />
+                <Route exact path={paths.client.HOME} component={Home} />
               </Switch>
             </Root>
           )}

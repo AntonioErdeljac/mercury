@@ -1,4 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Poppins);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 .mc-login {
   background-color: #9b59b6;
   height: 100%; }
@@ -27,10 +29,27 @@
   top: 10px;
   right: 10px;
   width: 300px;
-  transition: .4s right; }
+  transition: .4s right;
+  z-index: 100; }
   .mc-toast.mc-toast--hidden {
     right: -300px;
     transition: .4s right; }
+
+.mc-navbar .mc-navbar-brand {
+  color: #1fcf7c;
+  font-family: Montserrat;
+  font-size: 30px;
+  font-weight: bold; }
+
+.mc-home .mc-home-heading {
+  font-family: Montserrat;
+  font-size: 30px;
+  font-weight: bold;
+  color: #1fcf7c; }
+
+.mc-home .mc-home-right {
+  background-color: #1fcf7c;
+  height: 100%; }
 
 .mc-h-100 {
   height: 100% !important; }
@@ -42,6 +61,9 @@
 .mc-my-10 {
   margin-top: 10px;
   margin-bottom: 10px; }
+
+.mc-mt-200 {
+  margin-top: 200px !important; }
 
 .mc-error input {
   border-color: #e74c3c !important; }

@@ -7,7 +7,7 @@ import selectors from './selectors';
 
 import actions from '../../../actions';
 
-import { Form, Input, SubmitButton } from '../../common/components';
+import { Form, Input } from '../../common/components';
 
 import { forms, paths } from '../../../../../common/constants';
 
@@ -36,7 +36,7 @@ class Login extends Form {
 
           login(values)
             .then(() => {
-              window.location = paths.client.BASE;
+              window.location = paths.client.HOME;
             });
         }
 
@@ -57,8 +57,6 @@ class Login extends Form {
   }
 
   render() {
-    const { isSubmitting } = this.props;
-
     return (
       <div className="mc-login mc-h-100">
         <div className="mc-login-left mc-h-100" span={8}>
@@ -77,7 +75,7 @@ class Login extends Form {
         </div>
         <div className="mc-login-right mc-h-100" span={16}>
           <h1>Mercury</h1>
-          <p>World's best event platform</p>
+          <p>Worlds best event platform</p>
         </div>
       </div>
     );

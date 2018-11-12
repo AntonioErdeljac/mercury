@@ -4,6 +4,7 @@
     right: 10px;
     width: 300px;
     transition: .4s right;
+    z-index: 100;
 
     &.mc-toast--hidden {
         right: -300px;

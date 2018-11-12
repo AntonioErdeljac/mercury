@@ -24,7 +24,7 @@ class Root extends React.Component {
 
     return (
       <React.Fragment>
-        <Toast
+        {/* <Toast
           icon="globe"
           show={isConnected}
           hideTimeout={TOAST_TIMEOUT_MS}
@@ -46,7 +46,7 @@ class Root extends React.Component {
           message={_t(toasts.message)}
           success={toasts.type === 'success'}
           negative={toasts.type === 'negative'}
-        />
+        /> */}
         {children}
       </React.Fragment>
     );

@@ -1,3 +1,3 @@
-module.exports.BASE = '/';
+module.exports.HOME = '/home';
 module.exports.LOGIN = '/login';
 module.exports.REGISTER = '/register';
