@@ -34,6 +34,6 @@ module.exports = async (req, res) => {
 
     return respond.success(res, _.omit(foundUser.toObject(), ['authentication']));
   } catch (error) {
-    return console.log(error);
+    return respond.error(res, error);
   }
 };

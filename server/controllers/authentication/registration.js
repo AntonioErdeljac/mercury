@@ -6,20 +6,15 @@ module.exports = async (req, res) => {
   try {
     const existingUser = await db.Users.getByEmail(req.body.contact.email);
 
-    console.log(existingUser);
-
     if (existingUser) {
-      console.log('postoji Vlid');
       return respond.error(res, errorMessages.USER_400);
     }
 
     if (!db.Users.isValid(req.body)) {
-      console.log('NIJE Vlid');
       return respond.error(res, errorMessages.USER_400);
     }
 
     if (req.body.authentication.hashedPassword.length < MIN_PASSWORD_LENGTH) {
-      console.log('lozinka');
       return respond.error(res, errorMessages.USER_400);
     }
 
@@ -36,6 +31,6 @@ module.exports = async (req, res) => {
 
     return respond.success(res, createdUser);
   } catch (error) {
-    return console.log(error);
+    return respond.error(res, error);
   }
 };

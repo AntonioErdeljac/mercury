@@ -1,5 +1,5 @@
 const db = require('../../db');
-const { errors, respond } = require('../../utils');
+const { respond } = require('../../utils');
 const { errorMessages } = require('../../constants');
 
 module.exports = async (req, res) => {
@@ -7,7 +7,11 @@ module.exports = async (req, res) => {
     if (!db.Events.isValid(req.body)) {
       return respond.error(res, errorMessages.EVENT_400);
     }
+
+    const createdEvent = await db.Events.create(req.body);
+
+    return respond.success(createdEvent);
   } catch (error) {
-    return errors.respond(error);
+    return respond.error(res, error);
   }
 };
