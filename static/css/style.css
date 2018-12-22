@@ -70,6 +70,9 @@
   .mc-error input::placeholder {
     color: #e74c3c !important; }
 
+.mc-bg-primary {
+  background-color: #2d89e5; }
+
 p h1 a h2 h3 h4 h5 h6 b {
   font-family: 'Open Sans' !important; }
 

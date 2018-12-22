@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Button, Form as SemForm, Checkbox } from 'semantic-ui-react';
 
 import validations from './validations';
 import selectors from './selectors';
@@ -58,24 +57,14 @@ class Login extends Form {
 
   render() {
     return (
-      <div className="mc-login mc-h-100">
-        <div className="mc-login-left mc-h-100" span={8}>
-          <SemForm autocomplete="off" onSubmit={this.handleLogin}>
-            <SemForm.Field>
-              <Input {...this.getFieldProps('email')} label="Email" />
-            </SemForm.Field>
-            <SemForm.Field>
-              <Input {...this.getFieldProps('password')} label="Password" />
-            </SemForm.Field>
-            <SemForm.Field>
-              <Checkbox label="Remember me" />
-            </SemForm.Field>
-            <Button type="submit">Submit</Button>
-          </SemForm>
-        </div>
-        <div className="mc-login-right mc-h-100" span={16}>
-          <h1>Mercury</h1>
-          <p>Worlds best event platform</p>
+      <div className="container-fluid mc-h-100">
+        <div className="row mc-h-100">
+          <div className="col-6 mc-h-100 mc-bg-primary" />
+          <div className="col-6">
+            <form>
+              <Input {...this.getFieldProps('email')} name="Email" />
+            </form>
+          </div>
         </div>
       </div>
     );
