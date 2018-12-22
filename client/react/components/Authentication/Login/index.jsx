@@ -63,6 +63,7 @@ class Login extends Form {
           <div className="col-6">
             <form>
               <Input {...this.getFieldProps('email')} name="Email" />
+              <Input {...this.getFieldProps('password')} name="Password" />
             </form>
           </div>
         </div>
