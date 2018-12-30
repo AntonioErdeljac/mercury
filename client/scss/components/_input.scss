@@ -1,0 +1,21 @@
+.mc-input {
+  font-family: $primary-font;
+  background-color: inherit;
+
+  .mc-input-addon {
+
+    .mc-input-addon-text {
+      border-style: none;
+      border-bottom: 1px solid #ced4da;
+      background-color: #fff;
+      border-radius: 0;
+      transition-duration: 0.15s;
+      color: rgba(0,0,0,.5);
+
+      &.focused {
+        color: $primary-color;
+        border-bottom-color: $primary-color;
+      }
+    }
+  }
+}

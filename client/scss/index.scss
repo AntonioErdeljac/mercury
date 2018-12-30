@@ -1,17 +1,28 @@
 $primary-color: #2d89e5;
+$primary-font: 'Karla';
+$secondary-font: 'Work Sans';
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+@import url('https://fonts.googleapis.com/css?family=Karla:400,400i,700,700i&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700,800&subset=latin-ext');
+
 
 @import "components/login";
 @import "components/toast";
 @import "components/navbar";
 @import "components/home";
+@import "components/input";
+@import "components/button";
 
 @import "helpers/helpers";
 
 
-* {
-  font-family: 'Open Sans' !important;
+p input h1 h2 h3 h4 h5 h6 textarea b span div form {
+  font-family: $primary-font !important;
+}
+
+.form-control:focus {
+  box-shadow: none !important;
 }

@@ -1,36 +1,45 @@
 .mc-login {
-    // background: url(/static/images/bg.jpg) no-repeat center center fixed;
-    // -webkit-background-size: cover;
-    // -moz-background-size: cover;
-    // -o-background-size: cover;
-    // background-size: cover;
-    background-color: #9b59b6;
-    height: 100%;
 
-  .mc-login-left {
-      height: 100%;
-      background-color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: row;
-  }
+  .mc-login-text {
+    background: url('/static/images/bg.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+    font-family: $secondary-font;
+    text-align: left;
 
-  .mc-login-right {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      flex-direction: column;
-
-    h1 {
-        font-size: 50px;
-        color: white;
+    strong {
+      font-size: 50px;
     }
 
     p {
-        font-size: 30px;
-        color: white;
+      font-size: 20px;
+      font-weight: 300;
+    }
+  }
+
+  .mc-login-form {
+    .mc-register-text {
+      font-family: $primary-font;
+      font-size: 15px;
+      text-align: center;
+      border-style: none !important;
+    }
+
+    .mc-login-input {
+      border-style: none;
+      border-bottom-style: solid;
+      border-radius: 0;
+
+      &:focus {
+        border-bottom-color: $primary-color
+      }
     }
   }
 }

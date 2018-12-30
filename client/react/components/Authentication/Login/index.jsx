@@ -57,14 +57,34 @@ class Login extends Form {
 
   render() {
     return (
-      <div className="container-fluid mc-h-100">
+      <div className="mc-login container-fluid mc-h-100">
         <div className="row mc-h-100">
-          <div className="col-6 mc-h-100 mc-bg-primary" />
-          <div className="col-6">
-            <form>
-              <Input {...this.getFieldProps('email')} name="Email" />
-              <Input {...this.getFieldProps('password')} name="Password" />
-            </form>
+          <div className="col-6 mc-h-100 mc-login-text" style={{ backgroundColor: 'rgba(0,0,0,.02)' }}>
+            <div className="d-flex justify-content-left flex-column">
+              <strong>Welcome to Mercury</strong>
+              <p>Manage & explore events like never before.</p>
+            </div>
+          </div>
+          <div className="col-6 mc-h-100 mc-login-form">
+            <div className="container mc-h-100" style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column' }}>
+              <div className="row" style={{ marginBottom: '150px' }}>
+                <div className="col-md-6 offset-md-3 col-12">
+                  <i className="fas fa-leaf d-flex justify-content-center" style={{ marginBottom: '150px', color: '#2d89e5', fontSize: 80 }} />
+                  <form autoComplete="off">
+                    <div className="my-4">
+                      <Input {...this.getFieldProps('email')} addonIcon="envelope" hideLabel className="mc-login-input" name="Email" />
+                    </div>
+                    <div className="my-4">
+                      <Input {...this.getFieldProps('password')} type="password" addonIcon="key" hideLabel className="mc-login-input" name="Password" />
+                    </div>
+                    <button type="button" className="form-control mc-button primary">
+                      Login
+                    </button>
+                    <span className="form-control mc-register-text text-muted">Don't have an account?</span>
+                  </form>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
