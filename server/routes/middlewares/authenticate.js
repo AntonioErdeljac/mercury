@@ -9,7 +9,7 @@ module.exports = async (req, res, next) => {
       return res.redirect(paths.client.LOGIN);
     }
 
-    const user = db.Users.getBySessionToken((req.cookies ? req.cookies[cookies.AUTHENTICATION] : undefined) || req.headers.authorization);
+    const user = await db.Users.getBySessionToken((req.cookies ? req.cookies[cookies.AUTHENTICATION] : undefined) || req.headers.authorization);
 
     if (!user) {
       res.clearCookie(cookies.AUTHENTICATION, build.cookieOptions());
