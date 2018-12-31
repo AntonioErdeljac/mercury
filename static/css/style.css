@@ -75,6 +75,9 @@
     .mc-input .mc-input-addon .mc-input-addon-text.focused {
       color: #2d89e5;
       border-bottom-color: #2d89e5; }
+    .mc-input .mc-input-addon .mc-input-addon-text.error {
+      border-color: #e74c3c !important;
+      color: #e74c3c !important; }
 
 .mc-button {
   border-radius: 5px;
@@ -102,9 +105,9 @@
 .mc-mt-200 {
   margin-top: 200px !important; }
 
-.mc-error input {
+.mc-error {
   border-color: #e74c3c !important; }
-  .mc-error input::placeholder {
+  .mc-error::placeholder {
     color: #e74c3c !important; }
 
 .mc-bg-primary {
@@ -115,4 +118,10 @@ p input h1 h2 h3 h4 h5 h6 textarea b span div form {
 
 .form-control:focus {
   box-shadow: none !important; }
+
+a {
+  text-decoration: none !important; }
+  a *:hover {
+    opacity: 0.5 !important;
+    transition: 0.2s all !important; }
 

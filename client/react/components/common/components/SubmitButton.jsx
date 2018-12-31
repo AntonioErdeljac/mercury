@@ -1,14 +1,15 @@
+import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 
 const SubmitButton = (props) => {
-  const { isSubmitting, disabled, onClick, label } = props;
+  const { isSubmitting, disabled, onClick, label, className } = props;
 
   return (
     <button
-      type={onClick ? 'button' : 'submit'}
+      type="button"
       disabled={disabled || isSubmitting}
-      loading={isSubmitting}
+      className={cn('mc-button primary', { [className]: className })}
       onClick={onClick}
     >
       {label}
@@ -17,17 +18,19 @@ const SubmitButton = (props) => {
 };
 
 SubmitButton.defaultProps = {
-  onClick: undefined,
+  className: undefined,
   disabled: false,
   isSubmitting: false,
   label: undefined,
+  onClick: undefined,
 };
 
 SubmitButton.propTypes = {
-  isSubmitting: PropTypes.bool,
+  className: PropTypes.string,
   disabled: PropTypes.bool,
-  onClick: PropTypes.func,
+  isSubmitting: PropTypes.bool,
   label: PropTypes.string,
+  onClick: PropTypes.func,
 };
 
 export default SubmitButton;

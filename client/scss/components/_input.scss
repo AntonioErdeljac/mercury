@@ -16,6 +16,11 @@
         color: $primary-color;
         border-bottom-color: $primary-color;
       }
+
+      &.error {
+        border-color: #e74c3c !important;
+        color: #e74c3c !important;
+      }
     }
   }
 }

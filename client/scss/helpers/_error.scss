@@ -1,9 +1,7 @@
 .mc-error {
-    input {
-        border-color: #e74c3c !important;
+    border-color: #e74c3c !important;
 
-        &::placeholder {
-          color: #e74c3c !important;
-        }
+    &::placeholder {
+        color: #e74c3c !important;
     }
 }

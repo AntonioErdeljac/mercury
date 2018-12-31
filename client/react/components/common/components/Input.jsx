@@ -36,7 +36,7 @@ class InputField extends React.Component {
     const addon = addonIcon
       ? (
         <div className="mc-input-addon input-group-prepend">
-          <span className={cn('input-group-text mc-input-addon-text', { focused: isAddonFocused })}>
+          <span className={cn('input-group-text mc-input-addon-text', { focused: isAddonFocused, error: !!error })}>
             <i className={cn('fas', { [`fa-${addonIcon}`]: addonIcon })} />
           </span>
         </div>
@@ -50,7 +50,7 @@ class InputField extends React.Component {
           type={type}
           className={cn(`${className} form-control`, { 'mc-error': !!error })}
           disabled={disabled}
-          error={!!error}
+          error={error}
           id={id}
           onFocus={() => this.toggleFocusAddon()}
           onBlur={({ target }) => this.handleOnBlur(target.value, id)}

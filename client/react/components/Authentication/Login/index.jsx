@@ -1,12 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import validations from './validations';
 import selectors from './selectors';
 
 import actions from '../../../actions';
 
-import { Form, Input } from '../../common/components';
+import { Form, Input, SubmitButton } from '../../common/components';
 
 import { forms, paths } from '../../../../../common/constants';
 
@@ -77,10 +78,14 @@ class Login extends Form {
                     <div className="my-4">
                       <Input {...this.getFieldProps('password')} type="password" addonIcon="key" hideLabel className="mc-login-input" name="Password" />
                     </div>
-                    <button type="button" className="form-control mc-button primary">
-                      Login
-                    </button>
-                    <span className="form-control mc-register-text text-muted">Don't have an account?</span>
+                    <SubmitButton
+                      label="Login"
+                      className="form-control"
+                      onClick={this.handleLogin}
+                    />
+                    <Link to={paths.client.REGISTER}>
+                      <span className="form-control mc-register-text text-muted">Don&#39;t have an account?</span>
+                    </Link>
                   </form>
                 </div>
               </div>
