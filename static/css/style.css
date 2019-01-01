@@ -91,6 +91,11 @@
     transition: 0.2s all;
     opacity: 0.5; }
 
+.mc-sidebar {
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.05);
+  width: 20%; }
+
 .mc-h-100 {
   height: 100% !important; }
 
