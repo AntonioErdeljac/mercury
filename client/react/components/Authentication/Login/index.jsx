@@ -60,7 +60,7 @@ class Login extends Form {
     return (
       <div className="mc-login container-fluid mc-h-100">
         <div className="row mc-h-100">
-          <div className="col-6 mc-h-100 mc-login-text" style={{ backgroundColor: 'rgba(0,0,0,.02)' }}>
+          <div className="col-6 mc-h-100 mc-login-text">
             <div className="d-flex justify-content-left flex-column">
               <strong>Welcome to Mercury</strong>
               <p>Manage & explore events like never before.</p>
