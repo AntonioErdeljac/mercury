@@ -1,7 +1,10 @@
 import React from 'react';
+import Skeleton from 'react-loading-skeleton';
 
 const Home = () => (
-  <div className="mc-home mc-h-100" />
+  <div className="mc-paper">
+    <Skeleton height="19%" width="100%" count={5} />
+  </div>
 );
 
 export default Home;

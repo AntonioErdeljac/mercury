@@ -64,22 +64,26 @@
     height: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: row; }
+    .mc-navbar .mc-navbar-right p {
+      margin: 0;
+      font-family: "Karla"; }
+    .mc-navbar .mc-navbar-right .mc-navbar-user-img {
+      border-radius: 50%;
+      height: 40px;
+      margin-right: 15px;
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5); }
+  .mc-navbar .mc-navbar-center {
+    height: 100%;
+    display: flex;
+    justify-content: center;
     align-items: center; }
   .mc-navbar .mc-navbar-search {
     height: 100%;
     border-style: none;
     outline: none;
     font-family: "Karla"; }
-
-.mc-home .mc-home-heading {
-  font-family: Montserrat;
-  font-size: 30px;
-  font-weight: bold;
-  color: #1fcf7c; }
-
-.mc-home .mc-home-right {
-  background-color: #1fcf7c;
-  height: 100%; }
 
 .mc-input {
   font-family: "Karla";
@@ -165,9 +169,19 @@
 
 .mc-content {
   margin-left: 20%;
-  padding-top: 65px;
+  padding-top: calc(65px + 25px);
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 25px;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.01); }
+  background-color: rgba(0, 0, 0, 0.03); }
+
+.mc-paper {
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.05);
+  padding: 30px; }
 
 .mc-h-100 {
   height: 100% !important; }

@@ -34,6 +34,8 @@ class Register extends Form {
         if (canSubmit) {
           const { register, values } = this.props;
 
+          console.log(values);
+
           register(values)
             .then(() => {
               window.location = paths.client.LOGIN;
