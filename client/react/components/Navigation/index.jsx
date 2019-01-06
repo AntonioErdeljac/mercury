@@ -10,7 +10,11 @@ const Navigation = ({ children, location }) => {
   const { pageData: { user } } = window;
 
   const routes = Object.keys(routeDetails).map(key => (
-    <Link key={routeDetails[key].uri} className={cn('mc-sidebar-item', { active: location.pathname === routeDetails[key].uri })} to={routeDetails[key].uri}>
+    <Link
+      key={routeDetails[key].uri}
+      className={cn('mc-sidebar-item', { active: location.pathname === routeDetails[key].uri })}
+      to={routeDetails[key].uri}
+    >
       <i className={`fas ${routeDetails[key].icon} pr-3`} />
       <p>{_t(routeDetails[key].title)}</p>
     </Link>

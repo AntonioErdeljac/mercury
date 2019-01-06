@@ -10,7 +10,7 @@
       background-color: #fff;
       border-radius: 0;
       transition-duration: 0.15s;
-      color: rgba(0,0,0,.5);
+      color: $font-color;
 
       &.focused {
         color: $primary-color;

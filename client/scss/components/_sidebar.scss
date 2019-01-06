@@ -1,6 +1,6 @@
 .mc-sidebar {
   background-color: #fff;
-  box-shadow: 0px 0px 2px rgba(0,0,0,.1);
+  box-shadow: 0px 0px 2px $shadow-color;
   height: 100%;
   left: 0;
   position: fixed;
@@ -35,18 +35,18 @@
     p {
       margin: 0;
       font-family: $primary-font;
-      color: rgba(0,0,0,.5);
+      color: $font-color;
       transition: .1s ease-in-out;
     }
 
     i {
-      color: rgba(0,0,0,.5);
+      color: $font-color;
       transition: .1s ease-in-out;
     }
 
     &.active {
       transition: .1s ease-in-out;
-      background-color: rgba(0,0,0, 0.05);
+      background-color: $paper-color;
       border-left-width: 5px;
       border-left-color: $primary-color;
       border-left-style: solid;
@@ -66,7 +66,7 @@
 
     &:hover {
       transition: .1s ease-in-out;
-      background-color: rgba(0,0,0, 0.05);
+      background-color: $paper-color;
       border-left-width: 5px;
       border-left-color: $primary-color;
       border-left-style: solid;
