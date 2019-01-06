@@ -44,6 +44,26 @@
       transition: .1s ease-in-out;
     }
 
+    &.active {
+      transition: .1s ease-in-out;
+      background-color: rgba(0,0,0, 0.05);
+      border-left-width: 5px;
+      border-left-color: $primary-color;
+      border-left-style: solid;
+
+      p {
+        transition: .1s ease-in-out;
+        margin: 0;
+        color: $primary-color;
+        font-family: $primary-font;
+      }
+
+      i {
+        color: $primary-color;
+        transition: .1s ease-in-out;
+      }
+    }
+
     &:hover {
       transition: .1s ease-in-out;
       background-color: rgba(0,0,0, 0.05);

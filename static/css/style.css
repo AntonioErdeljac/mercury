@@ -152,6 +152,20 @@
     .mc-sidebar .mc-sidebar-item i {
       color: rgba(0, 0, 0, 0.5);
       transition: .1s ease-in-out; }
+    .mc-sidebar .mc-sidebar-item.active {
+      transition: .1s ease-in-out;
+      background-color: rgba(0, 0, 0, 0.05);
+      border-left-width: 5px;
+      border-left-color: #2d89e5;
+      border-left-style: solid; }
+      .mc-sidebar .mc-sidebar-item.active p {
+        transition: .1s ease-in-out;
+        margin: 0;
+        color: #2d89e5;
+        font-family: "Karla"; }
+      .mc-sidebar .mc-sidebar-item.active i {
+        color: #2d89e5;
+        transition: .1s ease-in-out; }
     .mc-sidebar .mc-sidebar-item:hover {
       transition: .1s ease-in-out;
       background-color: rgba(0, 0, 0, 0.05);

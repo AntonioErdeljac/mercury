@@ -28,7 +28,8 @@ window.onload = () => {
 
                 <Navigation>
                   <Switch>
-                    <Route exact path={paths.client.HOME} component={Home} />
+                    <Route exact path={paths.client.BASE} component={Home} />
+                    <Route exact path={paths.client.EVENTS} component={Home} />
                   </Switch>
                 </Navigation>
               </Switch>

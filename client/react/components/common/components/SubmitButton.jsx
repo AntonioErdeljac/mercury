@@ -2,6 +2,8 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import { _t } from '../../../../../common/i18n';
+
 const SubmitButton = (props) => {
   const { isSubmitting, disabled, onClick, label, className } = props;
 
@@ -12,7 +14,7 @@ const SubmitButton = (props) => {
       className={cn('mc-button primary', { [className]: className })}
       onClick={onClick}
     >
-      {label}
+      {_t(label)}
     </button>
   );
 };

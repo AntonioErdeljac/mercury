@@ -2,6 +2,8 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import { _t } from '../../../../../common/i18n';
+
 class InputField extends React.Component {
   constructor() {
     super();
@@ -55,7 +57,7 @@ class InputField extends React.Component {
           onFocus={() => this.toggleFocusAddon()}
           onBlur={({ target }) => this.handleOnBlur(target.value, id)}
           onChange={({ target }) => onChange(target.value, id)}
-          placeholder={name}
+          placeholder={_t(name)}
           value={value}
         />
       </div>

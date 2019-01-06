@@ -1,20 +1,30 @@
+import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-import { paths } from '../../../../common/constants';
+import { _t } from '../../../../common/i18n';
+import { paths, routeDetails } from '../../../../common/constants';
 
-const Navigation = ({ children }) => {
+const Navigation = ({ children, location }) => {
   const { pageData: { user } } = window;
+
+  const routes = Object.keys(routeDetails).map(key => (
+    <Link key={routeDetails[key].uri} className={cn('mc-sidebar-item', { active: location.pathname === routeDetails[key].uri })} to={routeDetails[key].uri}>
+      <i className={`fas ${routeDetails[key].icon} pr-3`} />
+      <p>{_t(routeDetails[key].title)}</p>
+    </Link>
+  ));
 
   return (
     <div className="mc-h-100">
       <div className="mc-navbar">
         <div>
           <i className="fas fa-search pr-3" />
-          <input placeholder="Search" className="mc-navbar-search" />
+          <input placeholder={_t('labels.search')} className="mc-navbar-search" />
         </div>
         <div className="mc-navbar-center">
-          <i className="fas fa-leaf" style={{ color: '#2d89e5', fontSize: 20 }} />
+          <i className="fas fa-leaf mc-leaf-center" style={{ color: '#2d89e5', fontSize: 20 }} />
         </div>
         <div className="mc-navbar-right">
           <img
@@ -27,33 +37,10 @@ const Navigation = ({ children }) => {
         </div>
       </div>
       <div className="mc-sidebar">
-        <div className="mc-sidebar-item">
-          <i className="fas fa-chart-pie pr-3" />
-          <p>Overview</p>
-        </div>
-        <div className="mc-sidebar-item">
-          <i className="fas fa-calendar pr-3" />
-          <p>Calendar</p>
-        </div>
-        <div className="mc-sidebar-item">
-          <i className="fas fa-comment pr-3" />
-          <p>Chat</p>
-        </div>
-        <div className="mc-sidebar-item">
-          <i className="far fa-calendar-check pr-3" />
-          <p>Events</p>
-        </div>
-        <div className="mc-sidebar-item">
-          <i className="fas fa-box-open pr-3" />
-          <p>Products</p>
-        </div>
-        <div className="mc-sidebar-item">
-          <i className="fas fa-cogs pr-3" />
-          <p>Settings</p>
-        </div>
+        {routes}
         <div onClick={() => { window.location = paths.client.LOGOUT; }} className="mc-sidebar-item bottom">
           <i className="fas fa-sign-out-alt pr-3" />
-          <p>Logout</p>
+          <p>{_t('navigation.logout')}</p>
         </div>
       </div>
       <div className="mc-content">
@@ -63,8 +50,15 @@ const Navigation = ({ children }) => {
   );
 };
 
+Navigation.defaultProps = {
+  location: {},
+};
+
 Navigation.propTypes = {
   children: PropTypes.element.isRequired,
+  location: PropTypes.shape({
+    pathname: PropTypes.string,
+  }),
 };
 
 export default Navigation;
