@@ -39,18 +39,21 @@
     align-items: center;
   }
 
-  .mc-navbar-search {
+  .mc-navbar-outer {
     height: 100%;
-    border-style: none;
-    outline: none;
-    font-family: $primary-font;
-    transition: .2s all;
-    padding: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
 
-    &:focus {
-      background-color: $shadow-color;
-      transition: .2s all;
-      border-radius: 5px;
+    .mc-navbar-search {
+      border-style: none;
+      outline: none;
+      font-family: $primary-font;
     }
   }
 }

@@ -79,17 +79,20 @@
     display: flex;
     justify-content: center;
     align-items: center; }
-  .mc-navbar .mc-navbar-search {
+  .mc-navbar .mc-navbar-outer {
     height: 100%;
-    border-style: none;
-    outline: none;
-    font-family: "Karla";
-    transition: .2s all;
-    padding: 15px; }
-    .mc-navbar .mc-navbar-search:focus {
-      background-color: rgba(0, 0, 0, 0.1);
-      transition: .2s all;
-      border-radius: 5px; }
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px; }
+    .mc-navbar .mc-navbar-outer .mc-navbar-search {
+      border-style: none;
+      outline: none;
+      font-family: "Karla"; }
 
 .mc-input {
   font-family: "Karla";

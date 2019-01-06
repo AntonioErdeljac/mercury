@@ -23,8 +23,8 @@ const Navigation = ({ children, location }) => {
   return (
     <div className="mc-h-100">
       <div className="mc-navbar">
-        <div>
-          <i className="fas fa-search pr-3" />
+        <div className="mc-navbar-outer">
+          <i className="fas fa-search mc-navbar-search-icon pr-3" />
           <input placeholder={_t('labels.search')} className="mc-navbar-search" />
         </div>
         <div className="mc-navbar-center">
