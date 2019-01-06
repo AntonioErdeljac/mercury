@@ -1,0 +1,11 @@
+.mc-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  .fa-leaf {
+    color: $primary-color;
+    font-size: 50px;
+  }
+}
