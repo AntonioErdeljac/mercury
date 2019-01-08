@@ -6,7 +6,7 @@ import { createBrowserHistory } from 'history';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
-import { Authentication, Root, Home, Navigation } from './components';
+import { Authentication, Root, Home, Navigation, Events } from './components';
 import { middleware, reducers } from './store';
 
 import { paths } from '../../common/constants';
@@ -29,7 +29,7 @@ window.onload = () => {
                 <Navigation>
                   <Switch>
                     <Route exact path={paths.client.BASE} component={Home} />
-                    <Route exact path={paths.client.EVENTS} component={Home} />
+                    <Route exact path={paths.client.EVENTS} component={Events} />
                   </Switch>
                 </Navigation>
               </Switch>

@@ -215,6 +215,13 @@
     color: #2d89e5;
     font-size: 50px; }
 
+.mc-event-card {
+  border-radius: 0;
+  border-style: none;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.05); }
+  .mc-event-card .card-img-top {
+    border-radius: 0; }
+
 .mc-h-100 {
   height: 100% !important; }
 
