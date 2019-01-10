@@ -29,7 +29,7 @@ window.onload = () => {
                 <Navigation>
                   <Switch>
                     <Route exact path={paths.client.BASE} component={Home} />
-                    <Route exact path={paths.client.EVENTS} component={Events} />
+                    <Route exact path={paths.client.EVENTS} component={Events.List} />
                   </Switch>
                 </Navigation>
               </Switch>
