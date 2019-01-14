@@ -24,3 +24,13 @@
     }
   }
 }
+
+.mc-basic-input {
+  border-style: none;
+  border-bottom-style: solid;
+  border-radius: 0;
+
+  &:focus {
+    border-bottom-color: $primary-color
+  }
+}

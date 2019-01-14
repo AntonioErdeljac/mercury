@@ -23,6 +23,8 @@ module.exports.labels = {
   password: 'Password',
   register: 'Register',
   search: 'Search',
+  title: 'Title',
+  description: 'Description',
 };
 
 module.exports.login = {

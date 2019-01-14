@@ -1,9 +1,10 @@
 module.exports.BASE = '/';
+module.exports.CALENDAR = '/calendar';
+module.exports.CHAT = '/chat';
 module.exports.EVENTS = '/events';
+module.exports.EVENTS_NEW = '/events/new';
 module.exports.LOGIN = '/login';
 module.exports.LOGOUT = '/logout';
-module.exports.REGISTER = '/register';
-module.exports.CHAT = '/chat';
-module.exports.SETTINGS = '/settings';
 module.exports.PRODUCTS = '/products';
-module.exports.CALENDAR = '/calendar';
+module.exports.REGISTER = '/register';
+module.exports.SETTINGS = '/settings';

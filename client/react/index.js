@@ -29,7 +29,9 @@ window.onload = () => {
                 <Navigation>
                   <Switch>
                     <Route exact path={paths.client.BASE} component={Home} />
+
                     <Route exact path={paths.client.EVENTS} component={Events.List} />
+                    <Route exact path={paths.client.EVENTS_NEW} component={Events.Form} />
                   </Switch>
                 </Navigation>
               </Switch>

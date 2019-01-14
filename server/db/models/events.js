@@ -12,6 +12,11 @@ const Events = mongoose.model('events', new Schema({
   imageUri: schemaTypes.string(),
   name: schemaTypes.string({ required: true }),
   startDate: schemaTypes.date({ required: true }),
+  address: {
+    street: schemaTypes.string({ required: true }),
+    city: schemaTypes.string({ required: true }),
+    country: schemaTypes.string({ required: true }),
+  },
 
   __v: schemaTypes.string({ select: false }),
   createdAt: schemaTypes.date({ select: false }),

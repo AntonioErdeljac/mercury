@@ -18,18 +18,28 @@ module.exports.navigation = {
 };
 
 module.exports.labels = {
+  create: 'Stvori',
+  description: 'Opis',
   email: 'Email',
   firstName: 'Ime',
-  lastName: 'Prezime',
-  login: 'Prijava',
-  password: 'Lozinka',
-  register: 'Registracija',
-  noAccount: 'Nemate račun?',
   haveAccount: 'Već imate račun?',
+  lastName: 'Prezime',
+  location: 'Lokacija',
+  login: 'Prijava',
+  noAccount: 'Nemate račun?',
+  numberOfGuests: 'Broj gostiju',
+  password: 'Lozinka',
+  price: 'Cijena',
+  register: 'Registracija',
   search: 'Pretraga',
+  title: 'Naziv',
 };
 
 module.exports.login = {
   header: 'Dobrodošli na Mercury',
   description: 'Upravljajte i istražujte dogadajima kao nikada prije.',
+};
+
+module.exports.events = {
+  create: 'Stvori dogadaj',
 };

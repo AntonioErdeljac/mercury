@@ -1,7 +1,9 @@
 const authentication = require('./authentication');
-const home = require('./home');
+const events = require('./events');
+const base = require('./base');
 
 module.exports = (router) => {
   authentication(router);
-  home(router);
+  events(router);
+  base(router);
 };
