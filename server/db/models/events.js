@@ -6,10 +6,12 @@ const schemaTypes = require('./schemaTypes');
 const { Schema } = mongoose;
 
 const Events = mongoose.model('events', new Schema({
-  name: schemaTypes.string({ reqiured: true }),
-  description: schemaTypes.string({ required: true }),
   author: { ref: 'users', type: Schema.Types.ObjectId },
+  description: schemaTypes.string({ required: true }),
   guests: [{ ref: 'users', type: Schema.Types.ObjectId }],
+  imageUri: schemaTypes.string(),
+  name: schemaTypes.string({ required: true }),
+  startDate: schemaTypes.date({ required: true }),
 
   __v: schemaTypes.string({ select: false }),
   createdAt: schemaTypes.date({ select: false }),
@@ -24,3 +26,5 @@ module.exports.create = (values) => {
   return Events(event).save()
     .then(createdEvent => createdEvent);
 };
+
+module.exports.get = () => Events.find();
